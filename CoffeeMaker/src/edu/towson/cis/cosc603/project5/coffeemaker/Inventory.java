@@ -124,10 +124,10 @@ public class Inventory {
      * Method toString.
      * @return String
      */
-    public String toString() {
-    	return "Coffee: " + getCoffee() + "\n" +
-			"Milk: " + getMilk() + "\n" +
-			"Sugar: " + getSugar() + "\n" +
-			"Chocolate: " + getChocolate() + "\n";
+    public String lineSeparator() {
+    	return "Coffee: " + getCoffee() + 
+			"Milk: " + getMilk() +
+			"Sugar: " + getSugar() + 
+			"Chocolate: " + getChocolate();
     }
 }
