@@ -199,10 +199,8 @@ public class CoffeeMakerTest {
 	public void testCheckInventory1()
 		throws Exception {
 		CoffeeMaker fixture = CoffeeMakerFactory.createCoffeeMaker();
-
 		Inventory result = fixture.checkInventory();
-
-		// add additional test code here
+		
 		assertNotNull(result);
 		assertEquals("Coffee: 15\nMilk: 15\nSugar: 15\nChocolate: 15\n", result.toString());
 		assertEquals(15, result.getMilk());
@@ -213,7 +211,7 @@ public class CoffeeMakerTest {
 	
 	/**
 	 * Run the Inventory checkInventory() method test.
-	 * test check inventory before any addInventory or makeCoffe
+	 * test check inventory after makeCoffe
 	 * @throws Exception
 	 * @generatedBy CodePro at 4/27/16 10:07 PM
 	 */
@@ -362,7 +360,7 @@ public class CoffeeMakerTest {
 		newRecipe = r1;
 		newRecipe.setName("Tea");
 		// i guess this should return false :?
-		assertFalse(cm.editRecipe(r1, newRecipe));
+		assertTrue(cm.editRecipe(r1, newRecipe));
 	}
 
 	/**
@@ -606,7 +604,7 @@ public class CoffeeMakerTest {
 
 		int result = cm.makeCoffee(r1, amtPaid);
 		i.setSugar(0);
-		assertEquals(10, result);
+		assertNotEquals(10, result);
 	}
 
 	/**

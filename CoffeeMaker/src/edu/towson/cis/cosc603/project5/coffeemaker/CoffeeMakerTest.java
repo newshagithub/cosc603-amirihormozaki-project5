@@ -11,7 +11,6 @@ public class CoffeeMakerTest extends TestCase {
 	private CoffeeMaker cm;
 	private Inventory i;
 	private Recipe r1;
-	private String price;
 
 	public void setUp() {
 		cm = new CoffeeMaker();
