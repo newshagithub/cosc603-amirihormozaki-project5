@@ -1,7 +1,8 @@
 package edu.towson.cis.cosc603.project5.coffeemaker;
 
 import org.junit.*;
-import static org.junit.Assert.*;
+
+import junit.framework.TestCase;
 
 /**
  * The class <code>RecipeTest</code> contains tests for the class <code>{@link Recipe}</code>.
@@ -10,47 +11,37 @@ import static org.junit.Assert.*;
  * @author newsha
  * @version $Revision: 1.0 $
  */
-public class RecipeTest {
+public class RecipeTest extends TestCase{
 	
 	private CoffeeMaker cm;
-	private Inventory i;
 	private Recipe r1;
 	
 	/**
 	 * Run the boolean equals(Recipe) method test.
-	 *
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testEquals_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
-		Recipe r = RecipeFactory.createRecipe();
+		
+		Recipe r2 = new Recipe();
+		boolean result = cm.equals(r2);
 
-		boolean result = fixture.equals(r);
-
-		// add additional test code here
 		assertEquals(false, result);
 	}
 
 	/**
 	 * Run the boolean equals(Recipe) method test.
-	 *
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testEquals_2()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
-		Recipe r = RecipeFactory.createRecipe();
+		
+		boolean result = cm.equals(r1);
 
-		boolean result = fixture.equals(r);
-
-		// add additional test code here
 		assertEquals(false, result);
 	}
 
@@ -64,12 +55,10 @@ public class RecipeTest {
 	@Test
 	public void testEquals_3()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
-		Recipe r = RecipeFactory.createRecipe();
+		
+		r1.setName(null);
+		boolean result = cm.equals(r1);
 
-		boolean result = fixture.equals(r);
-
-		// add additional test code here
 		assertEquals(false, result);
 	}
 	
@@ -157,11 +146,9 @@ public class RecipeTest {
 	@Test
 	public void testGetName1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+		r1.setName(null);
+		String result = r1.getName();
 
-		String result = fixture.getName();
-
-		// add additional test code here
 		assertEquals(null, result);
 	}
 	
@@ -192,43 +179,38 @@ public class RecipeTest {
 
 	/**
 	 * Run the void setAmtChocolate(int) method test.
-	 *
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtChocolate_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
 		int amtChocolate = -1;
 
-		fixture.setAmtChocolate(amtChocolate);
+		r1.setAmtChocolate(amtChocolate);
 
-		assertEquals(0, fixture.getAmtChocolate());
+		assertEquals(0, r1.getAmtChocolate());
 	}
 
 	/**
 	 * Run the void setAmtChocolate(int) method test.
-	 *
+	 * Test setAmtChocolate method
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtChocolate_2()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
 		int amtChocolate = 1;
 
-		fixture.setAmtChocolate(amtChocolate);
+		r1.setAmtChocolate(amtChocolate);
 
-		assertEquals(1, fixture.getAmtChocolate());
+		assertEquals(1, r1.getAmtChocolate());
 	}
 
 	/**
 	 * Run the void setAmtChocolate(int) method test.
-	 *
+	 * Test setAmtChocolate method for 0
 	 * @throws Exception
 	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
@@ -236,17 +218,16 @@ public class RecipeTest {
 	@Test
 	public void testSetAmtChocolate_3()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
 		int amtChocolate = 0;
 
-		fixture.setAmtChocolate(amtChocolate);
+		r1.setAmtChocolate(amtChocolate);
 
-		assertEquals(0, fixture.getAmtChocolate());
+		assertEquals(0, r1.getAmtChocolate());
 	}
 	
 	/**
 	 * Run the void setAmtChocolate(int) method test.
-	 *
+	 * Test setAmtChocolate method for > 0
 	 * @throws Exception
 	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
@@ -254,212 +235,198 @@ public class RecipeTest {
 	@Test
 	public void testSetAmtChocolate_4()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+		
 		int amtChocolate = 5;
 
-		fixture.setAmtChocolate(amtChocolate);
+		r1.setAmtChocolate(amtChocolate);
 
-		assertEquals(5, fixture.getAmtChocolate());
+		assertEquals(5, r1.getAmtChocolate());
 	}
 
 	/**
 	 * Run the void setAmtCoffee(int) method test.
-	 *
+	 * Test setAmtCoffee method for negative value
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtCoffee_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+
 		int amtCoffee = -1;
 
-		fixture.setAmtCoffee(amtCoffee);
+		r1.setAmtCoffee(amtCoffee);
 
-		assertEquals(0, fixture.getAmtCoffee());
+		assertEquals(0, r1.getAmtCoffee());
 	}
 
 	/**
 	 * Run the void setAmtCoffee(int) method test.
-	 *
+	 * Test setAmtCoffee method
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtCoffee_2()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+		
 		int amtCoffee = 1;
 
-		fixture.setAmtCoffee(amtCoffee);
+		r1.setAmtCoffee(amtCoffee);
 
-		assertEquals(1, fixture.getAmtCoffee());
+		assertEquals(1, r1.getAmtCoffee());
 	}
 
 	/**
-	 * Run the void setAmtMilk(int) method test.
-	 *
+	 * Run the void setAmtMilk(int) method test for negative value.
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtMilk_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+	
 		int amtMilk = -1;
 
-		fixture.setAmtMilk(amtMilk);
+		r1.setAmtMilk(amtMilk);
 
-		assertEquals(0, fixture.getAmtMilk());
+		assertEquals(0, r1.getAmtMilk());
 		
 	}
 
 	/**
 	 * Run the void setAmtMilk(int) method test.
-	 *
+	 * Test setAmtChocolate method
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtMilk_2()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
 		int amtMilk = 1;
 
-		fixture.setAmtMilk(amtMilk);
+		r1.setAmtMilk(amtMilk);
 
-		assertEquals(1, fixture.getAmtMilk());
+		assertEquals(1, r1.getAmtMilk());
 	}
 
 	/**
-	 * Run the void setAmtSugar(int) method test.
-	 *
+	 * Run the void setAmtSugar(int) method test for negative value
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtSugar_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
 		int amtSugar = -1;
 
-		fixture.setAmtSugar(amtSugar);
+		r1.setAmtSugar(amtSugar);
 
-		assertEquals(0, fixture.getAmtSugar());
+		assertEquals(0, r1.getAmtSugar());
 	}
 
 	/**
 	 * Run the void setAmtSugar(int) method test.
-	 *
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetAmtSugar_2()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+	
 		int amtSugar = 1;
 
-		fixture.setAmtSugar(amtSugar);
+		r1.setAmtSugar(amtSugar);
 
-		assertEquals(1, fixture.getAmtSugar());
+		assertEquals(1, r1.getAmtSugar());
 	}
-
+	/**
+	 * Run the void setAmtSugar(int) method test.
+	 * @throws Exception
+	 * @generatedBy CodePro at 4/27/16 10:08 PM
+	 */
+	@Test
 	public void testSetAmtSugar3()
 			throws Exception {
-			Recipe fixture = RecipeFactory.createRecipe();
+
 			int amtSugar = 0;
 
-			fixture.setAmtSugar(amtSugar);
+			r1.setAmtSugar(amtSugar);
 
-			assertEquals(0, fixture.getAmtSugar());
+			assertEquals(0, r1.getAmtSugar());
 		}
-	
+	/**
+	 * Run the void setAmtSugar(int) method test.
+	 * @throws Exception
+	 * @generatedBy CodePro at 4/27/16 10:08 PM
+	 */
+	@Test
 	public void testSetAmtSugar_4()
 			throws Exception {
-			Recipe fixture = RecipeFactory.createRecipe();
 			int amtSugar = 5;
 
-			fixture.setAmtSugar(amtSugar);
+			r1.setAmtSugar(amtSugar);
 
-			assertEquals(5, fixture.getAmtSugar());
+			assertEquals(5, r1.getAmtSugar());
 		}
 	
 	/**
-	 * Run the void setName(String) method test.
-	 *
+	 * Run the void setName(String) method test for empty value
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetName_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
 		String name = "";
 
-		fixture.setName(name);
+		r1.setName(name);
 
-		assertEquals("", fixture.getName());
+		assertEquals("", r1.getName());
 	}
 
 	/**
-	 * Run the void setPrice(int) method test.
-	 *
+	 * Run the void setPrice(int) method test for negative value
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetPrice_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
 		int price = -1;
 
-		fixture.setPrice(price);
+		r1.setPrice(price);
 
-		assertEquals(0, fixture.getPrice());
+		assertEquals(0, r1.getPrice());
 	}
 
 	/**
 	 * Run the void setPrice(int) method test.
-	 *
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testSetPrice_2()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+
 		int price = 1;
 
-		fixture.setPrice(price);
+		r1.setPrice(price);
 
-		assertEquals(1, fixture.getPrice());
+		assertEquals(1, r1.getPrice());
 	}
 
 	/**
-	 * Run the String toString() method test.
-	 *
+	 * Run the String toString() method test for null
 	 * @throws Exception
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Test
 	public void testToString_1()
 		throws Exception {
-		Recipe fixture = RecipeFactory.createRecipe();
+		Recipe r2 = new Recipe();
+		String result = r2.toString();
 
-		String result = fixture.toString();
-
-		// add additional test code here
 		assertEquals(null, result);
 	}
 
@@ -478,10 +445,8 @@ public class RecipeTest {
 	
 	/**
 	 * Perform pre-test initialization.
-	 *
 	 * @throws Exception
 	 *         if the initialization fails for some reason
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@Before
@@ -489,7 +454,6 @@ public class RecipeTest {
 		throws Exception {
 		
 		cm = new CoffeeMaker();
-		i = cm.checkInventory();
 
 		r1 = new Recipe();
 		r1.setName("Coffee");
@@ -503,10 +467,8 @@ public class RecipeTest {
 
 	/**
 	 * Perform post-test clean-up.
-	 *
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
-	 *
 	 * @generatedBy CodePro at 4/27/16 10:08 PM
 	 */
 	@After
@@ -514,18 +476,7 @@ public class RecipeTest {
 		throws Exception {
 		
 		cm = null;
-		i = null;
 		r1 = null;
 	}
 
-	/**
-	 * Launch the test.
-	 *
-	 * @param args the command line arguments
-	 *
-	 * @generatedBy CodePro at 4/27/16 10:08 PM
-	 */
-	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(RecipeTest.class);
-	}
 }

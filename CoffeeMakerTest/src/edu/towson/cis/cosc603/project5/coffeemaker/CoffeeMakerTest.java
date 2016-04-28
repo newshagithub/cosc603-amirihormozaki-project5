@@ -223,7 +223,7 @@ public class CoffeeMakerTest {
 		Recipe r = RecipeFactory.createRecipe();
 		int amtPaid = 1;
 
-		int purchaseResult = purchase.makeCoffee(r, amtPaid);
+		purchase.makeCoffee(r, amtPaid);
 		
 		CoffeeMaker fixture = CoffeeMakerFactory.createCoffeeMaker();
 		Inventory result = fixture.checkInventory();

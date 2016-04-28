@@ -101,7 +101,6 @@ public class Inventory {
      * Returns true if there are enough ingredients to make
      * the beverage.
      * @param r
-    
      * @return boolean */
     public boolean enoughIngredients(Recipe r) {
         boolean isEnough = true;
