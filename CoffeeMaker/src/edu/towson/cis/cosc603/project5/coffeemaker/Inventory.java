@@ -6,7 +6,7 @@ package edu.towson.cis.cosc603.project5.coffeemaker;
  * @version $Revision: 1.0 $
  */
 public class Inventory {
-    
+	static String newLine = System.getProperty("line.separator");
     private static int coffee;
     private static int milk;
     private static int sugar;
@@ -124,10 +124,10 @@ public class Inventory {
      * Method toString.
      * @return String
      */
-    public String lineSeparator() {
-    	return "Coffee: " + getCoffee() + 
-			"Milk: " + getMilk() +
-			"Sugar: " + getSugar() + 
-			"Chocolate: " + getChocolate();
+    public String toString() {
+    	return "Coffee: " + getCoffee() + newLine + 
+			"Milk: " + getMilk() + newLine +
+			"Sugar: " + getSugar() + newLine +
+			"Chocolate: " + getChocolate() + newLine;
     }
 }
